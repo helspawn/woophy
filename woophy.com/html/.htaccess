@@ -1,0 +1,23 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.+) - [PT,L]
+
+
+RewriteRule ^forum/index\.html$ ./index.php?mdrw=on [L]
+RewriteRule ^forum/rss$ ./index.php?action=rss&mdrw=on
+RewriteRule ^forum/([0-9]+)_([0-9]+)_([-0-9]+)\.html$ ./index.php?action=vthread&forum=$1&topic=$2&page=$3&mdrw=on [L]
+RewriteRule ^forum/([0-9]+)_([-0-9]+)\.html$ ./index.php?action=vtopic&forum=$1&page=$2&mdrw=on [L]
+RewriteRule ^photos/([^\-]+)(\-(.+))?(\.jpg)$ http://images.woophy.com/images/photos/$1$4 [L]
+RewriteRule ^blogphotos/([^\-]+)(\-(.+))?(\.jpg)$ http://images.woophy.com/images/blogs/$1$4 [L]
+
+RewriteRule ^map/download.php?file=([0-9]+)$ ./download/$1 [L]
+
+
+RewriteRule ^(.*)$ index.php [L,QSA]
+#AuthGroupFile /dev/null
+#AuthName "Woophy QA Admin"
+#AuthType Basic
+#AuthUserFile /var/www/.passwd
+#require valid-user

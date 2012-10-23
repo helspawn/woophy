@@ -1,0 +1,15 @@
+SUBJECT>>{$sitename}: Your username and password<<
+Hello,
+
+thank you for signing up at our forums!
+
+Your login is: {$username}
+Your password is: {$passwd}
+
+Please, keep this data in a cool and dry place for further assistance.
+
+If you forgot your password, please click on a "Password" link inside the login form on our forum pages.
+
+Peace,
+Forum Administrator
+{$main_url}/{$startIndex}

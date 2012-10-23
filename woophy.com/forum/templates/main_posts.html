@@ -1,0 +1,85 @@
+<script type="text/javascript">
+<!--
+var l_accessDenied="{$l_forbidden}";
+var l_quoteMsgAlert="{$l_quoteMsgAlert}";
+var tlength={$post_text_minlength};
+var anonPost={$anonPost};
+
+function checkBrowser()
+{
+this.ver=navigator.appVersion;
+this.dom=document.getElementById?1:0;
+this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom)?1:0;
+this.ie7=(this.ver.indexOf("MSIE 7")>-1 && this.dom)?1:0;
+this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+this.ns6=(this.dom && parseInt(this.ver)>= 5)?1:0;
+this.safari=(this.ver.indexOf("safari")>-1)?1:0;
+this.ns4=(document.layers && !this.dom)?1:0;
+this.opr=(navigator.userAgent.toLowerCase().indexOf("opera")!=-1)?1:0;
+return this
+}
+
+function getQuotation() {
+var bw=new checkBrowser();
+var displayQuote={$displayQuote};
+if (displayQuote && (bw.dom || bw.ns6 || bw.ie5 || bw.ie6 || bw.ie7 || bw.ns4 || bw.safari || bw.opr)) {
+document.writeln('<a href="javascript:paste_strinL(selektion,1)" onmousedown="pasteSel()">{$l_quoting}<'+'/a>');
+}
+}
+
+function confirmDelete(id,what){
+var mes,url='forum={$forum}&topic={$topic}&';
+if(what==0) { mes='{$l_areYouSureDeletePost}'; url=url+'action=delmsg&page={$page}&post='+id; }
+else if(what==1) { mes='{$l_areYouSureDeleteTopic}'; url=url+'action=deltopic'; }
+else if(what==2) { mes='{$l_deleteAllMsgs}?'; }
+if( (what==0 || what==1) && confirm(mes)) document.location='{$main_url}/{$indexphp}'+url;
+else if(what==2 && confirm(mes)) document.forms['allMsgs'].submit();
+}
+
+//-->
+</script>
+
+<table class="tbTransparent blocktitle">
+<tr>
+<td class="tbTransparent"><img src="{$img_url}/forum_icons/{$forumIcon}" alt="{$forumName}" /></td>
+<td class="tbTransparent" style="width:100%;vertical-align:middle;padding-left:10px;"><a href="{$main_url}/{$startIndex}">{$sitename}</a> &lt; <a href="{$linkToForums}">{$forumName}</a> &lt; {$topic_reverse}{$topicName}</td>
+</tr>
+</table>
+
+
+{$pageNav}
+
+<form action="{$main_url}/{$indexphp}" method="post" class="formStyle" id="allMsgs">
+
+<table class="forums">
+<tr>
+<td class="caption4" style="width:80px;text-align:left">{$l_author}</td>
+<td class="caption4" style="text-align:left">{$l_message}</td>
+</tr>
+
+{$listPosts}
+
+</table>
+
+<table><tr><td>
+<input type="hidden" name="action" value="delmsg" />
+<input type="hidden" name="page" value="{$page}" />
+<input type="hidden" name="forum" value="{$forum}" />
+<input type="hidden" name="topic" value="{$topic}" />
+</td></tr></table>
+
+</form>
+
+{$pageNav}
+
+{$mainPostArea}
+
+<table class="tbTransparent">
+<tr><td class="tbTransparentCell">{$closeTopic} {$moveTopic} {$deleteTopic} {$deleteAllMsgs} {$stickyTopic} {$subsTopic}&nbsp;</td></tr>
+</table>
+
+<script type="text/javascript">
+<!--
+//if(document.forms['postMsg']) document.forms['postMsg'].elements['subbut'].disabled=false;
+//-->
+</script>

@@ -1,0 +1,80 @@
+.DS_calendar{
+}
+.DS_calendar table{
+	table-layout:fixed;
+	border-collapse:separate;
+	border-spacing: 0px;
+}
+.DS_calendar table td{
+	padding:1px 0;
+	width:35px;
+	height:22px;
+	text-align:center;
+	vertical-align:middle;
+}
+.DS_calendar table thead{
+	border-bottom:1px dotted #003900;
+}
+
+.DS_calendar table thead td{
+	border:0;
+	font-weight:bold;
+}
+.DS_calendar .MonthHeader{
+	padding-bottom:10px;
+	border-bottom:1px dotted #003900;
+}
+.DS_calendar .MonthHeader .DS_month{
+	float:left;
+	width:242px;
+	text-align: center;
+	font-weight:bold;
+}
+
+.DS_month{
+	cursor:pointer;
+	text-decoration:underline;
+}
+.DS_year {
+	border:1px solid #CCCCCC;
+}
+.DS_year, .DS_year option{
+	color:#003900;
+}
+.DS_paging{
+	width:18px;
+	height:18px;
+	float:left;
+}
+.DS_pageforward{
+	cursor:pointer;
+	background-position:-170px -415px;
+}
+.DS_pagebackward{
+	cursor:pointer;
+	background-position:-151px -415px;
+}
+.DS_pageforward_disabled{background-position:-212px -415px;}
+.DS_pagebackward_disabled{background-position:-193px -415px;}
+
+.DS_weekday{
+	font-weight:bold;
+	padding-top:8px !important;
+}
+.DS_date_disabled{
+	cursor:default;
+	color:#92A585 !important;
+}
+.DS_date_selected, .DS_date:hover, .DS_today:hover{
+	color:#FFFFFF !important;
+	cursor:pointer;
+	background-color:#66C02A;
+}
+.DS_date{
+	cursor:pointer;
+}
+.DS_week{
+	cursor:pointer;
+	font-weight:bold;
+	text-decoration:underline;
+}

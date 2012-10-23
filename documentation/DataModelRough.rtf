@@ -1,0 +1,136 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww21060\viewh19040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 INSERT INTO abuse_reports (report_url, user_id, user_name, user_email, message, user_ip)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 INSERT INTO advertising_ads (ad_text,ad_weight,size_id,section_id)\
+\
+INSERT INTO ambassadors (user_id, language_code)\
+\
+INSERT INTO awards SET user_id\
+\
+INSERT INTO blog_newsletters (newsletter_publication_date, post_id, post_order)\
+\
+\
+INSERT INTO blog_user2category (user_id, category_id)\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 INSERT INTO blog_comments (comment_text, post_id, user_id, user_name)\
+\
+INSERT INTO blog_posts (user_id, post_title, post_text, post_status, post_publication_date, category_id,travelblog_id,city_id)\
+\
+INSERT INTO blog_photos (user_id, width, height)\
+\
+\
+INSERT INTO cities (UFI,UNI,LATI,LONGI,PC,CC1,ADM1,ADM2,NT,FULL_NAME_ND,x,y)\
+UPDATE cities SET photo_count = (SELECT COUNT(*) FROM photos WHERE city_id='.(int)$uni.') WHERE UNI='.(int)$uni))$this->throwError(1);\
+./classes/City.class.php:				//echo 'UPDATE cities SET zoom = '.$zoom.' WHERE UNI = '.$uni.'<br/>';\
+./classes/City.class.php:				DB::query('UPDATE cities SET zoom =\
+\
+INSERT INTO cityoftheday SET date='$today', UNI=$uni;\
+\
+\
+INSERT INTO contest_entries(photo_id, category_id, poster_id, poster_name, entry_remark)\
+\
+contest_votes(user_id, entry_id, value)\
+UPDATE contest_votes SET value = \\''.DB::escape($value).'\\' WHERE user_id = \
+\
+\
+INSERT INTO ecard_posts (photo_id, to_name,to_email,from_name,post_body,post_ip)\
+\
+INSERT IGNORE INTO editors_picks (user_id, photo_id, city_id)\
+\
+\
+\
+INSERT IGNORE INTO favorite_photos (user_id, photo_id)\
+\
+INSERT IGNORE INTO favorite_users (user_id, favorite_user_id) \
+\
+\
+SELECT language_name FROM languages WHERE language_code =\
+\
+\
+INSERT INTO messages SET user_id='.(int)$user_id.\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+\
+INSERT INTO photo_tags (tag_text)\
+\
+INSERT INTO photo_tag2photo (tag_id, photo_id, average_rate)\
+\
+INSERT INTO photo_comments (photo_id, user_id, poster_name, poster_id, comment_text)\
+\
+\
+\
+INSERT INTO photos (city_id, user_id, x, y, country_code, width, height, keywords, exif, folder_id, photo_date, photo_date_lookup, photo_week, photo_month)\
+SELECT city_id, photo_id FROM photos\
+\
+INSERT INTO photo2category\
+\
+INSERT INTO photo_folders (user_id, folder_name)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 INSERT INTO photos_trash SELECT * FROM photos \
+\
+\
+INSERT INTO rating (photo_id, user_id, rate, ip, date)\
+UPDATE rating SET rate = '.$rate.', ip = \\''.$ip.'\\', date=NOW() WHERE photo_id =\
+\
+\
+	if(!DB::query("UPDATE status SET num_of_photos_today = $numOfPhotosToday, \
+./classes/Status.class.php:		if(!DB::query('UPDATE status SET num_of_users = (SELECT COUNT(0) FROM users) WHERE status_id=1;'))$this->throwError(2);\
+./classes/Status.class.php:		if(!DB::query('UPDATE status SET num_of_views = (SELECT SUM(views) FROM photos) WHERE status_id=1;'))$this->throwError(2);\
+./classes/Status.class.php:					if(DB::query("UPDATE status SET city_of_the_day_name = '$city',city_of_the_day_country='$country',city_of_the_day_uni=$uni, city_of_the_day_pid=$pid,city_of_the_day_userid=$uid,city_of_the_day_date='$today' WHERE status_id=1;"))\{\
+./classes/Status.class.php:				if(DB::query('UPDATE status SET motm_date=\\''.$date.'\\',motm_name=\\''.DB::escape($un).'\\',motm_country=\\''.$country.'\\',motm_pid='.$pid.',motm_id='.$uid.' WHERE status_id=1'))\{\
+./classes/Status.class.php:			if(!DB::query('UPDATE status SET last_comment=\\''.DB::escape($last_comment).'\\',last_comment_pid='.(int)$last_comment_pid.',last_comment_name=\\''.DB::escape($last_comment_name).'\\',last_comment_userid='.(int)$last_comment_user_id.',last_comment_pids = \\''.implode($delimiter, $last_photo_ids).'\\' WHERE status_id=1'))$this->throwError(3);\
+./classes/Status.class.php:			if(!DB::query('UPDATE status SET last_blog_post=\\''.DB::escape($title).'\\', last_blog_user_name=\\''.DB::escape($name).'\\' WHERE status_id=1')) $this->throwError(3);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+\
+INSERT INTO tellafriend_posts (direct_link,from_name,from_email,to_name,to_email,post_remark,post_ip)\
+\
+\
+INSERT INTO travelblogs (travelblog_title, travelblog_description, user_id)\
+\
+INSERT INTO tipoftheday (text)\
+\
+\
+INSERT INTO $tableAdZoneAssoc (zone_id, ad_id)\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 INSERT INTO users_deleted (user_id, user_name,user_email,user_ip)\
+\
+INSERT INTO users (user_name, password, email, active, welcome_letter, registration_date)\
+SELECT user_name, user_id, active FROM users\
+	$result = DB::query('SELECT user_id FROM users WHERE email = \\''.DB::escape($email).'\\' LIMIT 0,1');\
+./classes/Access.class.php:				$result = DB::query('SELECT last_ip FROM users WHERE user_id= '.(int)$_SESSION['userid']);\
+./classes/Account.class.php:				$result = DB::query('SELECT password FROM users WHERE user_id = '.(int)$uid.' AND password = \\''.md5($currPW).'\\'');\
+./classes/Account.class.php:		$query = 'SELECT user_name, email, welcome_letter FROM users\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+\
+\
+///////// grep -r "SELECT" . ///////////\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

@@ -1,0 +1,474 @@
+select option{
+	padding:0 2px;
+}
+#ForumPage #RightColumn {
+	padding-top:4px;
+}
+#RightColumn .SectionHeader, #RightColumn .Header{
+	border:0;
+	height:16px;
+	overflow:hidden;
+}
+#ForumNav{
+	float:right;
+}
+#ForumNav #ForumListDropdown{
+	width:290px;
+	display:block;
+	float:left;
+	margin:0 10px 0 0;
+}
+
+#ForumNav #ForumListDropdown select{
+	width:314px;
+	display:block;
+	background-position:270px -68px;
+}
+
+#ForumNav .submit{
+	float:left;
+	display:block;
+}
+
+#MainContent{
+	padding-bottom:0px;
+}
+#Forum{
+
+}
+
+#MiniBBCredits{
+	margin:20px 0;
+	color:#4B911E;
+}
+table.whosonline{
+	width:100%;
+	margin-top:15px;
+
+}
+table.whosonline td{
+	padding-bottom:20px;
+}
+table.whosonline td img{
+	vertical-align:middle;
+	float:none;
+}
+
+html,body{ 
+	height:100%;
+}
+table.list td{
+	vertical-align:middle;
+}
+.gbody{
+	padding:0px;
+	margin:0px;
+	background-color:white;/*preview*/
+}
+
+#editorControls td{
+	line-height: 21px;
+	vertical-align: middle;
+}
+#editorControls td img{
+	vertical-align:top;
+}
+#editorControls #dissmilies{
+	height:auto;
+}
+#editorControls label{
+	line-height:21px;
+	display: inline;
+}
+select#option_insert{
+	margin:0 10px;
+	height:21px;
+}
+/* General smart tables class */
+.forumList{
+	padding-right:2px;
+	padding-top:6px;
+	text-align:right;
+}
+.forumList .inputButton{
+	width:100px;
+}
+table.forums,table.forumsmb{
+
+margin-bottom:25px;
+/*width: 960px;*/
+width:100%;
+border-bottom: 1px #64BC28 dotted;
+border-width: 0px 1px 1px 1px;
+display: table;
+color: #053904;
+border-collapse: collapse;
+}
+
+table.forumsmb{
+margin-bottom:20px;
+}
+
+/* Simple transparent table without borders and background color (menu navigation, general tables) */
+
+.tbTransparent, .tbTransparentmb{
+/*width: 960px;
+width:100%;*/
+background: transparent;
+font-size: 12px;
+/*line-height: 15px;;*/
+vertical-align: top;
+color:#4B8F1E;
+}
+.tbTransparent h1{
+	color:#053904;
+	margin:0;
+}
+.tbTransparentmb{
+margin-bottom:12pt;
+}
+
+.tbTransparentCell{
+/*text-align: center;*/
+padding: 10px 0px;
+}
+td.num{
+	width:25px;
+	color:#4B8F1E;
+}
+
+img {
+border: 0px;
+max-width:500px;
+}
+
+td{
+text-align: left;
+}
+
+/* blocktitle alternative transparent mode */
+table.blocktitle{
+	width:100%;
+	margin-bottom: 10px;
+}
+
+.blocktitle td{
+	font-size:14px;
+	/*font-weight:bolder;
+	text-transform:capitalize;*/
+}
+.blocktitle img{
+	float:left;
+}
+/* Small analog text, used usually with SPAN */
+
+.txtSm{
+text-decoration: none;	
+font-size: 11px;
+color: #4B911E;
+}
+
+.txtSm b{
+	font-size: 11px;
+}
+
+.txtSm a{
+	font-size: 11px;
+	/*color: #4B911E !important;*/
+}
+
+.txtSm img{
+	margin-bottom: -8px;
+}
+
+/* Normal analog text, used usually with SPAN */
+
+.txtNr,.txtNr b{
+text-decoration: none;
+font-size: 9pt;
+}
+
+/* Views color */
+
+.views{
+/*color:#9A9A9A;*/
+}
+
+/* Warning text */
+
+.warning{
+color: #4B911E;
+font-size: 12px;
+font-weight: bold;
+}
+
+/* Supscript class */
+.Paging{
+	margin:25px 0;
+}
+.navCell{
+font-size: 10px;
+display:inline;
+}
+.navCell .Paging{
+margin:0;
+padding:0;
+text-align:left;
+display:inline;
+}
+.navCell .Paging li{
+margin:0 0 0 5px;
+min-width:0;
+width:auto;
+background-color:transparent !important;
+}
+.navCell .Paging a{
+color:#FF8600;	
+}
+.navCell .Paging a:hover{
+background-color:transparent !important;
+}
+table.pageNav td{
+	text-align:center;
+}
+table.pageNav{
+	width:100%;
+}
+/* Class for select boxes */
+
+.selectTxt {
+font-size: 12px;
+background-color: #FFFFFF;
+}
+
+/* List style - user's info */
+
+.limbb{
+list-style: circle;
+font-size: 12px;
+margin-left: 10pt;
+}
+
+/* Input areas - boxes, textareas... */
+
+.inputButton {
+background: #67C02A;
+font-size: 12px;
+border: none;
+color: #FFFFFF;
+height:21px;
+padding:0 4px;
+}
+
+.textForm {
+background: #FFFFFF;
+border: #4A8F1E 1px solid;
+font-size: 9pt;
+}
+
+/* Caption 1 (the one for displaying sub-headers like "topics, posted" etc) */
+
+td.caption1 {
+border: 1px solid #AEAEAE;
+font-size: 12px;
+/*line-height: 15px;*/
+padding:10px;
+text-align: left;
+}
+td.caption1 a{
+	color:#053904;
+	text-decoration: underline;
+}
+
+/* Caption 2 color and properties (this one displaying main menu,  New Topic text bg, New Message text bg) */
+
+td.caption2 {
+
+border: 1px #4A8F1E solid;
+border-bottom: 1px #64BC28 dotted;
+background-color: #4A8F1E;
+color: #FFF;
+padding: 4px;
+height: 20px;
+font-size: 12px;
+font-weight: bold;
+/*line-height: 15px;*/
+
+}
+
+td.caption2 a, td.caption2 a:visited, td.caption2 a:hover, td.caption2 a:active{
+	color :#FFF;
+}
+
+/* Caption 3 (used for Last Discussions, topic titles, Forums selection) */
+
+td.caption3 {
+border: 1px #4A8F1E solid;
+border-bottom: 1px #64BC28 dotted;
+background-color: #4A8F1E;
+color: #FFF;
+padding: 3px;
+height: 20px;
+font-size: 12px;
+/*line-height: 15px;*/
+vertical-align: top;
+}
+
+td.caption3 a, td.caption3 a:visited, td.caption3 a:hover, td.caption3 a:active{
+	color :#FFF;
+}
+
+/* Caption 4 (the one for displaying not separate headers like Forum, Topic, Poster etc. on 1st page, Buttons menu, left info cell) */
+
+td.caption4 {
+background-color: #4A8F1E;
+color: #FFF;
+border: 1px #4A8F1E solid;
+/*border-bottom: 1px #65BE29 dotted;*/
+font-size: 12px;
+padding-bottom: 7px;
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 7px;
+text-align: left;
+font-weight: bold;
+}
+
+/* Caption 5 (used for user input like password/login and registration etc) */
+
+td.caption5 {
+background-color: #E3F4D9;
+border: 1px solid #AEAEAE;
+padding: 7px;
+height: 20px;
+font-size: 12px;
+/*line-height: 15px;*/
+vertical-align: top;
+}
+
+/* Caption 6 (used for groups) */
+
+td.caption6 {
+background-color: #4A8F1E;
+color: #FFF;
+border: 1px solid #4A8F1E;
+font-size: 12px;
+/*line-height: 15px;*/
+padding-bottom: 7px;
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 7px;
+text-align: left;
+font-weight: bold;
+}
+
+/* Font for displaying username in each thread */
+
+.username{
+text-decoration: none;
+font-size: 12px;
+font-weight: bold;
+word-wrap:break-word;
+}
+
+/* Topics/forums/threads content cell color #1 */
+
+.tbCel1{
+background: #E3F4D9;
+}
+
+/* Topics/forums/threads content cell color #2 */
+
+.tbCel2{
+background: #FFF;
+}
+
+.formStyle{
+margin: 0px;
+}
+
+/* Stats bar */
+
+.tbStBar{
+border: #4A8F1E 1px solid;
+margin: 1px;
+padding: 1px;
+background: #FFFFFF;
+font-size: 12px;
+}
+.tbStBar a:link,.tbStBar a:visited{
+	text-decoration:none;
+	color: #FE9900;
+}
+
+#Login a:link, #Login a:visited{
+	text-decoration: none !important;
+}
+#Login a:hover{
+	text-decoration: underline !important;
+}
+div.sort{
+	font-size:12px;
+}
+
+
+ol.mbb, ul.mbb, blockquote.mbb{
+margin-bottom: 0px;
+}
+
+
+#postMsg table{
+	width:100%;
+
+}
+
+/* Last images */
+
+.lastimagetitle{
+	border-bottom: 1px #64BC28 dotted;
+	padding-bottom: 5px;
+}
+
+.lastimageholder{
+	padding-top: 20px;
+}
+
+.lastimagesize{
+	width: 951px;
+}	
+
+.lastimages{
+	border: #4A8F1E solid 1px;
+	padding: 1px 0px 1px 1px;
+	display: block;
+}
+
+.lastimages div{
+	margin-right: 1px;
+}
+
+.txtCm{
+	color: #FF8600;
+}
+.post_author .Avatar{
+	margin:0 auto 10px auto!important;
+	/*min-height: 0 !important;*/
+}
+
+.post_author a.Thumb{
+	background-position:-168px -288px;
+}
+.post_author span{
+	display:block;
+	text-align:center;
+	margin-top:5px;
+}
+.smilies{
+	width:100%;
+	height:100%;
+	border-collapse: collapse;
+}
+.smilies, .smilies td{
+	background-color:white;
+	border: 1px #64BC28 dotted;
+}

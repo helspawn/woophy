@@ -1,0 +1,10 @@
+SUBJECT>>{$sitename}: Confirm your email<<
+Hello {$loginName},
+
+Click on confirmation link below or copy/paste it to your browser's location bar for gaining full access to our forums:
+
+{$main_url}/{$indexphp}action=confirmpasswd&confirmCode={$confirmCode}
+
+Peace,
+Forum Administrator
+{$main_url}/{$startIndex}

@@ -1,0 +1,77 @@
+body{
+	background:none;
+}
+a {
+	color:#053904;
+	text-decoration:underline;
+}
+fieldset table td{
+	padding:5px 5px 5px 0;
+}
+fieldset table td:last-child{
+	padding-right:0;
+}
+fieldset table tr:last-child td{
+	padding-bottom:0;
+}
+fieldset{
+	padding:5px;
+	padding-top:0px;
+	margin-left:10px;
+	margin-bottom:5px;
+}
+#content fieldset{
+	margin-right:10px;
+}
+legend{
+	font-weight:bold;
+	color:#003900;
+	margin-bottom:5px;
+}
+#navigation{
+	width:235px;
+	float:left;
+}
+#navigation a{
+	text-decoration:none;
+}
+#navigation a.active{
+	text-decoration:underline;
+}
+#content{
+	margin-left:235px;
+}
+input[disabled=true]{
+	background-color:#EFEFEF !important;
+	color:#AAAAAA !important;
+}
+
+#navigation span.expandp{
+	font-weight:bold;
+	border:1px solid #66C029;
+	margin:5px;
+	color:#66C029;
+	cursor:pointer;
+	display:inline-block;
+	width:16px;
+	text-align:center;
+}
+#navigation legend{
+	cursor:pointer;
+}
+#navigation ul{
+	margin:10px 10px 10px 20px ;
+	list-style-type:none;
+	display:none;
+}
+#navigation a{
+	color:#003900 !important;
+}
+div.header{
+	background-color:#EDF9E3;
+	padding:10px;
+	margin-bottom:10px;
+}
+form[name=form_add_city] td{
+	border-top: 1px dotted #66C029;
+}

@@ -1,0 +1,624 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fnil\fcharset0 Georgia;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 Courier-Bold;\f4\fnil\fcharset0 LucidaGrande;\f5\fmodern\fcharset0 Courier;
+\f6\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red14\green0\blue237;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid2\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww32000\viewh16900\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 I\'92ve attached a brief introduction to the Woophy directory structure. It tells you where to find important directories/files. The list is far from complete, if you need more info, please ask.
+\fs32 \
+
+\fs28 \'a0\
+\
+
+\fs32 \
+
+\fs28 My first thoughts about moving Woophy to another server:
+\fs32 \
+
+\fs28 1. Set up new server: LAMP, configure apache and PHP (Rewrite Rules, UTF-8 support). Make sure all necessary PHP extensions are installed (gd, mbstring, memcache, mysql, simplexml, exif, uploadprogress)
+\fs32 \
+
+\fs28 2. Copy application files to new server, without user input. So no photos and empty database. Make sure every functionality (register, upload, comment, rate, mail etc.) works. Remove input after testing.
+\fs32 \
+
+\fs28 3. Close down old website or, more friendly, only disable user input. This requires some extra work. Not disabling input and synchronizing data after moving requires a lot of extra work. I would go for disabling input.
+\fs32 \
+
+\fs28 4. Move photos and database.
+\fs32 \
+
+\fs28 5. Change DNS records.\
+\
+\
+/////////// THOUGHTS ////////\
+\
+ 1) Put all their code into version control\
+ 2) Configure an AWS server and RDS server for deployment\
+ 3) Other stuff?...\
+\
+ Use "rsync" to keep files in two servers in sync\
+\
+\
+///////////// FROM MARCEL //////////\
+\
+Consider "sync"???\
+\
+http://www.123cloud.eu/123cloud-hosting-products/public-cloud\
+\
+Marco van den Akker | vda.hosting 1:12 PM \
+123Cloud is also offering cloud solutions.\
+Scott Lane Williams 1:12 PM \
+as i'm trying to figure this all out, i'll PING you.\
+Marco van den Akker | vda.hosting 1:12 PM \
+you should check out Spotcloud.com\
+\
+\
+\
+///////////// NEED ////////////////////\
+\
+ 1) Monintoring via google analytics and/or other tools\
+ 2) Admin screens. Admin login, processes, etc.\
+ 3) List of cron jobs and other things that comprise the architecture.\
+ 4) Any special extra OS configurations or add-ons\
+ 5) Access to both the "web" application server and the "database" server\
+ 6) Database "root" access.\
+ 7) Any source control/versioning?\
+ 8) Any architecture documentation.\
+ 9) Any special setup for the 
+\f1\fs21 \expnd0\expndtw0\kerning0
+AMFPHP software\
+ 
+\f0\fs28 \kerning1\expnd0\expndtw0 10) Any PHP accelerators used?\
+ 11) Special configuration for sendmail? Did it use external mail sending service?\
+ 12) Which version of linux was/is it running?\
+ 13) What were the specs of the app server?: disk space, memory, processors, linux version, php version, etc?\
+ 14) What were the specs of the database server?: disk space, memory, processors, linux version, php version, etc?\
+ 15) Any special MySQL configurations?\
+ 16) Any database replication, redundancy, etc?\
+\
+//////////// ALSO NEED ///////////////\
+\
+ 1) Source code to Flash map.\
+ 2) Database Data Model (DDL)\
+\
+\
+////////////// AWS TASKS ///////////////\
+\
+>>>>>>> EC2 >>>>>>>>>>\
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 1: Find an Amazon Machine Image\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\b0\fs24 \cf0 I chose this {\field{\*\fldinst{HYPERLINK "http://developer.amazonwebservices.com/connect/entry%21default.jspa?categoryID=223&externalID=2754&fromSearchPage=true"}}{\fldrslt \cf2 \ul \ulc2 Ubuntu 9.10 Server 32-bit}} (Karmic Koala) uploaded by Canonical from the {\field{\*\fldinst{HYPERLINK "http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=171"}}{\fldrslt \cf2 \ul \ulc2 AMI directory}} and made sure to grab the 
+\i AMI ID
+\i0  from the listing.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 2: Set-Up an EC2 Account\
+\pard\pardeftab720\sa240\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "https://www.amazon.com/ap/signin?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&authCookies=1&openid.mode=checkid_setup&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.pape.max_auth_age=600&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Faws%2Fssop%2Fhandlers%2Fauth-portal.html%3Fie%3DUTF8%26wreply%3Dhttps%253A%252F%252Faws-portal.amazon.com%252Fgp%252Faws%252Fdeveloper%252Fregistration%252Findex.html%26awsrequestchallenge%3Dfalse%26wtrealm%3Durn%253Aaws%253AawsAccessKeyId%253A1QQFCEAYKJXP0J7S2T02%26wctx%3D%26awsaccountstatuspolicy%3DP1%26wa%3Dwsignin1.0%26awsrequesttfa%3Dtrue&openid.assoc_handle=ssop&openid.pape.preferred_auth_policies=http%3A%2F%2Fschemas.openid.net%2Fpape%2Fpolicies%2F2007%2F06%2Fmulti-factor-physical&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&accountStatusPolicy=P1&siteState=awsMode%3A%3AsignUp%3A%3A&"}}{\fldrslt 
+\b0\fs24 \cf2 \ul \ulc2 Set-up a Amazon EC2 Account}}
+\b0\fs24  and login.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 3: Choose your Amazon Machine Image\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\b0\fs24 \cf0 Choose your Amazon Machine Image (AMI) by clicking on the 
+\i Community AMI Tab
+\i0  and entering the 
+\i AMI ID
+\i0  from the listing you choose in Step 1.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 4: Request You Instance\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\b0\fs24 \cf0 Next you can choose the number of instances by size and billing options. You have a number of choices to make here including which data center you want to run your instance from (I had four choices). I also could chose between two billing options.\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\i\b\fs28 \cf0 Launch Instances
+\i0 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\i\b0\fs24 \cf0 EC2 Instances let you pay for compute capacity by the hour with no long term commitments. This transforms what are commonly large fixed costs into much smaller variable costs.
+\i0 \
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 5: Advanced Instance Options\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\b0\fs24 \cf0 I chose cloud monitoring here, for an extra fee you can have Amazon monitor your EC2 Instance. I checked the box because I was interested in what they offered in the way of monitoring:\
+\pard\pardeftab720\ql\qnatural
+
+\i \cf0 Enable CloudWatch Monitoring for this instance
+\i0 \
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 6: Create a Key Pair\
+\pard\pardeftab720\ql\qnatural
+
+\b0\fs24 \cf0 This will allow you to login to your box remotely via SSH. You could use an existing pair two if you like. If it\'92s your first key pair on EC2, just download the pair so you can authenticate later or you will be locked out of your instance.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 7: Configure Firewall\
+\pard\pardeftab720\ql\qnatural
+
+\b0\fs24 \cf0 By default your EC2 image will be locked down tighter than a drum. At a minimum you will want to add access for SSH over port 22.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 8: Review and Launch\
+\pard\pardeftab720\ql\qnatural
+
+\b0\fs24 \cf0 Now you need only review the settings\'a0 and launch.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 9: Wait for the image to boot.\
+\pard\pardeftab720\ql\qnatural
+
+\b0\fs24 \cf0 You\'92ll get a confirmation screen that looks like this and you\'92ll need to wait a minute or so for the image to boot.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\pard\pardeftab720\sa280\ql\qnatural
+
+\f2\b\fs36 \cf0 Step 10: View Your Amazon Instance\
+\pard\pardeftab720\ql\qnatural
+
+\b0\fs24 \cf0 You can now close the Launch Instances wizard and view your running AMI in the Amazon EC2 Dashboard.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+////////////////////////////////\
+\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f2\fs24 \cf0 Use this documentation section for tips, and as a reference for all the different accounts and keys.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	1.	}Create an 
+\f3\b Amazon Account
+\f2\b0 . This is the one you use to buy books with, and it needs credit card information. The "Setting up an Account" document assumes you already have this. 
+\f4 \uc0\u8232 \u8232 
+\f2 If you don't yet have an Amazon account, create one. This is the normal web-based logon, with your email address for the account and a password you choose. 
+\f4 \uc0\u8232 \u8232 
+\f2 Remember the email address and password you use here - this gets you into the Amazon retail store and the AWS services.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f3\b \cf0 {\listtext	2.	}AWS Account
+\f2\b0 . The Amazon Web Services (AWS) portal page is {\field{\*\fldinst{HYPERLINK "http://www.nte.co.uk/java/docs/GigaSystemBuilderGuide/deployment/ec2Deployment.html"}}{\fldrslt \cf2 \ul \ulc2 here}}. 
+\f4 \uc0\u8232 \u8232 
+\f2 Create an account at {\field{\*\fldinst{HYPERLINK "http://www.amazon.com/gp/aws/registration/registration-form.html"}}{\fldrslt \cf2 \ul \ulc2 http://www.amazon.com/gp/aws/registration/registration-form.html}}. This will use your Amazon account for the email address and password. 
+\f4 \uc0\u8232 \u8232 
+\f2 However, AWS has its own 
+\f3\b AWS Account Number
+\f2\b0  in the format 'nnnn-nnnn-nnnn'. {\field{\*\fldinst{HYPERLINK "http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/account.html"}}{\fldrslt \cf2 \ul \ulc2 Setting up an Account}} tells you how to find this number.\
+{\listtext	3.	}AWS Access Identifiers. From the AWS Home page, use the {\field{\*\fldinst{HYPERLINK "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key"}}{\fldrslt \cf2 \ul \ulc2 Access Identifiers}} link. This page describes two types of identifiers - AWS Access Keys and X.509 certificates. You need both.\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	a.	}Access keys. You are automatically assigned your 
+\f3\b Access Key ID
+\f2\b0  and your 
+\f3\b Secret Access Key
+\f2\b0 . We'll use '1NBPS61PV6MF2D87AHGR2' as an example of the Access Key ID later.\
+{\listtext	b.	}X.509 Certificate. Create a new X.509 certificate if you need one, or upload an existing one. This step seems to require a valid Amazon account with the first-choice credit card being valid. If this step fails, check that your Amazon account information is correct and that the credit card information is up-to-date. 
+\f4 \uc0\u8232 \u8232 
+\f2 On the Success page, you will be prompted to save two files - the 
+\f3\b Private Key file
+\f2\b0 , something like 
+\f5 pk-22SAD7AOV4OQPTJPAYRH2XAZTXBULZ2E.pem
+\f2 , and the 
+\f3\b X.509 Certificate file
+\f2\b0 , e.g. 
+\f5 cert-22SAD7AOV4OQPTJPAYRH2XAZTXBULZ2E.pem
+\f2 . 
+\f4 \uc0\u8232 \u8232 
+\f2 These need to go in the .ec2 directory within your "home directory". On Windows, use 
+\f5 %HOME%\\.ec2
+\f2  - you'll probably (a) need to do this from the command line rather than explorer and (b) enclose the filename in quotes, i.e. 
+\f5 mkdir "%HOME%\\.ec2"
+\f2 . On Unix, use 
+\f5 ~\\.ec2
+\f2  for the directory.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	4.	}For S3 signup, go to the {\field{\*\fldinst{HYPERLINK "http://aws.amazon.com/s3/"}}{\fldrslt \cf2 \ul \ulc2 S3 home page}} click the "Sign up for Amazon S3" button and use your Amazon account email address and password.\
+{\listtext	5.	}For EC2 signup, go to the {\field{\*\fldinst{HYPERLINK "http://aws.amazon.com/ec2/"}}{\fldrslt \cf2 \ul \ulc2 EC2 home page}} click the "Sign up for Amazon S3" button and use your Amazon account email address and password. 
+\f4 \uc0\u8232 \u8232 
+\f2 When you signed up to AWS, you got your AWS account ID. Your EC2 user ID is the AWS account ID with the hyphens removed.\
+{\listtext	6.	}Amazon EC2 Tools Setup. In this section you set up the EC2 tools and tell them where to find the X.509 certificate and the EC2 private key. 
+\f4 \uc0\u8232 \u8232 
+\f2 Go to the EC2 {\field{\*\fldinst{HYPERLINK "http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/?ref=get-started"}}{\fldrslt \cf2 \ul \ulc2 Getting Started Guide}} page and then use the 'Setting up the Tools' link, which ends up {\field{\*\fldinst{HYPERLINK "http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/setting-up-your-tools.html"}}{\fldrslt \cf2 \ul \ulc2 here}}. 
+\f4 \uc0\u8232 \u8232 
+\f2 Download the tools as described. The actual download point is {\field{\*\fldinst{HYPERLINK "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351&categoryID=88"}}{\fldrslt \cf2 \ul \ulc2 here}}. This talks about downloading the EC2 tools from S3 - the "S3" is just a bit of advertising for S3 - these really are the EC2 tools. The file is 
+\f5 ec2-api-tools.zip
+\f2 . 
+\f4 \uc0\u8232 \u8232 
+\f2 You now need to unzip the tools to a directory. There is some confusion about this directory:\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	
+\f4 \uc0\u9702 
+\f2 	}in some of the documentation it says to store these in the .ec2 directory in your home directory (item 2 above)\
+{\listtext	
+\f4 \uc0\u9702 
+\f2 	}in this section of the documentation it says to store them in the EC2 tool directory.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	7.	}Both seem to work! We'll call this directory 
+\f5 <amazon-ec2-api-tools-install-dir>
+\f2 . 
+\f4 \uc0\u8232 \u8232 
+\f2 The bottom line of this set-up is you need to set four command-line variables, something like this on Windows - substituting your own directories and filenames:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth11540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f5 \cf0 {\listtext	8.	}set EC2_HOME=<amazon-ec2-api-tools-install-dir>\
+{\listtext	9.	}set PATH=%path%;%EC2_HOME%\\bin\
+{\listtext	10.	}set EC2_PRIVATE_KEY=%HOME%\\.ec2\\pk-22SAD7AOV4OQPTJPAYRH2XAZTXUBLZ2E.pem\
+{\listtext	11.	}set EC2_CERT=%HOME%\\.ec2\\cert-22SAD7AOV4OQPTJPAYRH2XAZTXUBLZ2E.pem\uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	12.	}Configure the GigaSpaces tools.\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	a.	}Sign up to GigaSpaces at {\field{\*\fldinst{HYPERLINK "http://www.gigaspaces.com/ec2signup"}}{\fldrslt \cf2 \ul \ulc2 http://www.gigaspaces.com/ec2signup}} 
+\f4 \uc0\u8232 \u8232 
+\f2 This will result in an email being sent to you with a GigaSpaces cloud license code in it.\
+{\listtext	b.	}Download GigaSpaces Cloud Tools. 
+\f4 \uc0\u8232 \u8232 
+\f2 Download the following zip file and extract 
+\f4 \uc0\u8232 {\field{\*\fldinst{HYPERLINK "http://gigaspacesversions.s3.amazonaws.com/gigaspaces-cloudtools-2.3.6.zip"}}{\fldrslt 
+\f2 \cf2 \ul \ulc2 http://gigaspacesversions.s3.amazonaws.com/gigaspaces-cloudtools-2.3.6.zip}}
+\f2  
+\f4 \uc0\u8232 \u8232 
+\f2 The following discussion assumes you unzip this into 
+\f5 C:\\gigaspaces-cloud-tools
+\f2 .\
+{\listtext	c.	}GigaSpaces Access Key ID. 
+\f4 \uc0\u8232 \u8232 
+\f2 Create a file called 'key.txt' in C:\\gigaspaces-cloud-tools\\default-settings\\keys. 
+\f4 \uc0\u8232 
+\f2 This is to hold your public key for encryption. The value must be equal to your 
+\f5 AWS Access Key ID
+\f2  from step 3. 
+\f4 \uc0\u8232 
+\f2 Make sure there is no whitespace (spaces or newlines) before or after the Key string 
+\f4 \uc0\u8232 
+\f2 - so just '1NBPS61PV6MF2D87AHGR2'. 
+\f4 \uc0\u8232 \u8232 
+\f2 Do the same thing for the Secret Access Key (see step 2.2) using the file name secret-key.txt 
+\f4 \uc0\u8232 
+\f2 ... so create \\gigaspaces-cloud-tools-v2.0.0-beta\\default-settings\\keys\\secret-key.txt. 
+\f4 \uc0\u8232 
+\f2 Again make sure there is no extraneous whitespace. 
+\f4 \uc0\u8232 \u8232 
+\f2 When you first download it, the file C:\\gigaspaces-cloud-tools\\default-settings\\gslicense.xml looks like this \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9440\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1
+\f5 \cf0 {\listtext	d.	}<com>\
+{\listtext	e.	}  <j_spaces>\
+{\listtext	f.	}	<kernel>\
+{\listtext	g.	}	  <licensekey>Aug 21, 2009~GigaSpaces Eval Cloud\
+{\listtext	h.	}	</kernel>\
+{\listtext	i.	}  </j_spaces>\
+{\listtext	j.	}</com>\uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	k.	}Replace the value with the license key cloud license secret-key from the email GigaSpaces sent you. \
+{\listtext	l.	}Adding ports to EC2 security groups 
+\f4 \uc0\u8232 \u8232 
+\f2 Add ports 22, 80, 442 to your EC2 security groups. This is done with the Amazon EC2 tools (from step 3)\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth10980\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1
+\f5 \cf0 {\listtext	m.	}<amazon-ec2-api-tools-install-dir>\\bin\\ec2-authorize default -p 22\
+{\listtext	n.	}<amazon-ec2-api-tools-install-dir>\\bin\\ec2-authorize default -p 80\
+{\listtext	o.	}<amazon-ec2-api-tools-install-dir>\\bin\\ec2-authorize default -p 443\uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	p.	}Port 22 - used for HTTPS communication 
+\f4 \uc0\u8232 
+\f2 Port 80 - used for deploying the GigaSpaces Web Management Center and the Ganglia monitoring tool 
+\f4 \uc0\u8232 
+\f2 Port 443 - used for secured http.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	13.	}Starting the Cloud. 
+\f4 \uc0\u8232 \u8232 
+\f2 If the Deployment Option target is set to 'Amazon EC2', the following structure will be generated. 
+\f4 \uc0\u8232 \u8232 
+\f6 {{\NeXTGraphic gsb6050.png \width9760 \height3480 \noorient
+}¬}
+\f2  
+\f4 \uc0\u8232 \u8232 
+\f2 Three files are created and are described below. They all make use of GigaSpaces deployment tools.\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	
+\f4 \uc0\u9702 
+\f2 	}cloud-config.xml - The cloud configuration file\
+{\listtext	
+\f4 \uc0\u9702 
+\f2 	}deployToCloud.cmd - Organises the jar files and calls gs-launch-cloud.cmd\
+{\listtext	
+\f4 \uc0\u9702 
+\f2 	}deployToCloud_Shutdown.cmd - Stops the cloud deployment calling gs-shutdown-cloud.cmd\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	14.	}
+\f4 \uc0\u8232 
+\f2 To deploy the data-example into the cloud open a cmd box, change directory to 
+\f4 \uc0\u8232 
+\f2 <CongestionChargeSystem>\\deployment\\deployToCloud\\ \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3980\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f5 \cf0 {\listtext	15.	}deployToCloud.cmd\uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	16.	}The log output will look something like the example shown below.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth11820\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f5 \cf0 {\listtext	17.	}OUTPUT FROM THE LOG\
+{\listtext	18.	}-------------------------------------------------------------------------\
+{\listtext	19.	}- Gigaspaces Cloud Tools v2.0.0 Beta\
+{\listtext	20.	}- loading Config File : ..\\deploy\\CongestionChargeSystem\\cloud-config.xml\
+{\listtext	21.	}- loading Config File : C:/cloud/bin/../default-settings/cloud-config.xml\
+{\listtext	22.	}- Command: createCloud\
+{\listtext	23.	}- Cloud name: data-example-ian\
+{\listtext	24.	}- Number of args: 0 : []\
+{\listtext	25.	}- AMI: ami-6adc3803 Type: small\
+{\listtext	26.	}- Cloud Keys Validated.\
+{\listtext	27.	}- Gigaspaces License Validated.\
+{\listtext	28.	}- Deleted cloud data from repository\
+{\listtext	29.	}- Running Instances\
+{\listtext	30.	}- Number of GSM machines    : 1\
+{\listtext	31.	}- Number of GSM per machine : 1\
+{\listtext	32.	}- Number of GSC machines    : 3\
+{\listtext	33.	}- Number of GSC per machine : 2\
+{\listtext	34.	}- Number of GSC to wait before we deploy : 6\
+{\listtext	35.	}- Using Load balancer       : null\
+{\listtext	36.	}- Using Database            : false\
+{\listtext	37.	}- Putting Jars in Repository\
+{\listtext	38.	}.\
+{\listtext	39.	}- Time: 2sec\
+{\listtext	40.	}- Waiting for Cloud GSM to start\
+{\listtext	41.	}...........................................................\
+{\listtext	42.	}- Time: 204sec\
+{\listtext	43.	}- Could not find existing UI machine - starting up a new one\
+{\listtext	44.	}- Using GSM running on:domU-12-31-39-00-C6-45.compute-1.internal\
+{\listtext	45.	}...........................................................\
+{\listtext	46.	}- Time: 198sec\
+{\listtext	47.	}- Ui machine public dns = ec2-75-101-193-110.compute-1.amazonaws.com\
+{\listtext	48.	}- Waiting for Cloud GSC to start\
+{\listtext	49.	}...\
+{\listtext	50.	}- Time: 5sec\
+{\listtext	51.	}- Cloud GSM started successfully on the following machine IP: \
+{\listtext	52.	}-       domU-12-31-39-00-C6-45.compute-1.internal\
+{\listtext	53.	}-       GSM Public Dns: ec2-75-101-183-185.compute-1.amazonaws.com\
+{\listtext	54.	}- Cloud GSCs started successfully on the following machines IP:\
+{\listtext	55.	}        ec2-75-101-230-41.compute-1.amazonaws.com\
+{\listtext	56.	}        ec2-75-101-240-115.compute-1.amazonaws.com\
+{\listtext	57.	}        ec2-67-202-31-176.compute-1.amazonaws.com\
+{\listtext	58.	}- Waiting for ui web server to start.\
+{\listtext	59.	}..\
+{\listtext	60.	}- Time: 5sec\
+{\listtext	61.	}- Time: 31sec\
+{\listtext	62.	}- UI server is ready\
+{\listtext	63.	}- Deploying Processing Units.\
+{\listtext	64.	}..............................\
+{\listtext	65.	}- Time:74sec\
+{\listtext	66.	}-\
+{\listtext	67.	}-  instance id , type ,    public dns                            \
+{\listtext	68.	}  i-1901af70 ,  gsm ,  ec2-75-101-183-185.compute-1.amazonaws.com\
+{\listtext	69.	}  i-1b01af72 ,  gsc ,   ec2-75-101-230-41.compute-1.amazonaws.com\
+{\listtext	70.	}  i-1a01af73 ,  gsc ,  ec2-75-101-240-115.compute-1.amazonaws.com\
+{\listtext	71.	}  i-1d01af74 ,  gsc ,   ec2-67-202-31-176.compute-1.amazonaws.com\
+{\listtext	72.	}  i-901eb0f9 ,   ui ,  ec2-75-101-193-110.compute-1.amazonaws.com\
+{\listtext	73.	}-------------------------------------------------------------------------\
+{\listtext	74.	}\uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0\cf0 {\listtext	75.	}Shutting Down 
+\f4 \uc0\u8232 \u8232 
+\f2 To shutdown the data-example into the cloud open a cmd box, change directory to <CongestionChargeSystem>\\deployment\\deployToCloud\\ and run the command\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5380\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f5 \cf0 {\listtext	76.	}deployToCloud_Shutdown.cmd \uc0\u8232 
+\f2 \cell \lastrow\row
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\b \cf0 {\listtext	77.	}Your accountant will be very glad to hear you have shut down the cloud.
+\b0  Because if you don't, you will be charged by the instance-hour. !!!\
+{\listtext	78.	}Monitoring 
+\f4 \uc0\u8232 \u8232 
+\f2 As noted above, there are a number of options for monitoring tools. 
+\f4 \uc0\u8232 
+\f2 GigaSpaces Management tool is the one we used and it is the one you see on a GigaSpaces course. 
+\f4 \uc0\u8232 \u8232 
+\f2 Other tools include:\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ql\qnatural
+\ls1\ilvl1\cf0 {\listtext	
+\f4 \uc0\u9702 
+\f2 	}Firefox Organizer - to view deployment repository 
+\f4 \uc0\u8232 {\field{\*\fldinst{HYPERLINK "https://addons.mozilla.org/en-US/firefox/addons/policy/0/3247/20757"}}{\fldrslt 
+\f2 \cf2 \ul \ulc2 https://addons.mozilla.org/en-US/firefox/addons/policy/0/3247/20757}}
+\f2 \
+{\listtext	
+\f4 \uc0\u9702 
+\f2 	}Firefox ElasticFox - monitors active instance 
+\f4 \uc0\u8232 {\field{\*\fldinst{HYPERLINK "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=609"}}{\fldrslt 
+\f2 \cf2 \ul \ulc2 http://developer.amazonwebservices.com/connect/entry.jspa?externalID=609}}
+\f2 \
+{\listtext	
+\f4 \uc0\u9702 
+\f2 	}Gangalia - monitoring system for clouds 
+\f4 \uc0\u8232 {\field{\*\fldinst{HYPERLINK "http://ganglia.info/"}}{\fldrslt 
+\f2 \cf2 \ul \ulc2 http://ganglia.info/}}
+\f2 \
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+////////////////////////////////\
+\
+\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f2\fs24 \cf0 In the management console, do the following:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'95	}First, we need to create a security group (firewall configuration)\
+{\listtext	\'95	}Start by selecting security groups from the menu\
+{\listtext	\'95	}Create a new security group "web"\
+{\listtext	\'95	}Add SSH and HTTP protocols to the web-group\
+{\listtext	\'95	}Create a key pair (SSH key)\
+{\listtext	\'95	}Start by selecting key pairs\
+{\listtext	\'95	}Give a name for it: "web-admin"\
+{\listtext	\'95	}Save web-admin.pem to a safe place (you need it to log into the server)\
+{\listtext	\'95	}In unix environment you need to set strict permissions for the key to work with ssh. chmod 0600 web-admin.pem will do the job.\
+{\listtext	\'95	}Create a new instance (server)\
+{\listtext	\'95	}Select Instances from the menu\
+{\listtext	\'95	}Launch new instance\
+{\listtext	\'95	}Select AMI you are comfortable with. As I am a Debian fan, I use Debian 5.0\
+{\listtext	\'95	}Selected Community AMIs\
+{\listtext	\'95	}Selected alestic/debian-5.0-lenny-base-20090215.manifest.xml\
+{\listtext	\'95	}Select to start one server using small server configuration\
+{\listtext	\'95	}Select the created keypair and security group\
+{\listtext	\'95	}Wait until you server instance has started\
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs28 \cf0 \
+\
+\
+\
+>>>>>>> RDS >>>>>>>>>>\
+\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f2\fs24 \cf0 The first step is to create a database instance. Here\'92s how to create a database named mydb with room for up to 20 GB of data:\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-create-db-instance \'96db-instance-identifier mydb \'96allocated-storage 20 \'96db-instance-class db.m1.large \'96engine MySQL5.1 \'96master-username dbroot \'96master-user-password dbpass\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 You can specify any one of five server instance classes:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls3\ilvl0\cf0 {\listtext	\'95	}db.m1.small (1.7 GB of RAM, $0.11 per hour).\
+{\listtext	\'95	}db.m1.large (7.5 GB of RAM, $0.44 per hour)\
+{\listtext	\'95	}db.m1.xlarge (15 GB of RAM, $0.88 per hour).\
+{\listtext	\'95	}db.m2.2xlarge (34 GB of RAM, $1.55 per hour).\
+{\listtext	\'95	}db.m2.4xlarge (68 GB of RAM, $3.10 per hour).\
+{\listtext	\'95	}\
+\pard\tx560\pardeftab720\ql\qnatural
+\cf0 \
+\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 You can check on the status of your new database at any time:\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-describe-db-instances \
+DBINSTANCE mydb db.m1.large MySQL5.1 20 dbroot\'a0\'a0\'a0\'a0creating 1\'a0\'a0us-east-1d 1\
+\'a0\'a0\'a0\'a0SECGROUP default active\
+\'a0\'a0\'a0\'a0PARAMGRP default.MySQL5.1 in-sync\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 When the status changes from 
+\b creating
+\b0  to 
+\b available
+\b0  your database is ready for use and the command output will include the server name and connection string you use to access the database instance from the command line or your application:\
+\pard\tx560\pardeftab720\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-describe-db-instances \
+DBINSTANCE mydb 2009-10-15T22:47:48.037Z db.m1.large MySQL5.1 20 dbroot available mydb.cwuz5lta310x.us-east-1.rds.amazonaws.com 3306 us-east-1d 1\
+\'a0\'a0\'a0\'a0SECGROUP default active\
+\'a0\'a0\'a0\'a0PARAMGRP default.MySQL5.1 in-sync\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 The final step is to edit the database\'92s security group so that it allows inbound connections. You can enable connections from any (or all) of your EC2 security groups:\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-authorize-db-security-group-ingress default \'96ec2-security-group-name default \'96ec2-security-group-owner-id 889135802129\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 You can also enable connections from a particular IP address or address range using CIDR notation:\
+\pard\tx560\pardeftab720\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-authorize-db-security-group-ingress default \'96cidr-ip 198.87.83.201/32\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 And that\'92s all it takes to create a fully functioning DB Instance of MySQL 5.1 in the cloud. There\'92s nothing to install, nothing to configure, and nothing to tune. The DB Instance will use the {\field{\*\fldinst{HYPERLINK "http://dev.mysql.com/doc/refman/5.0/en/innodb.html"}}{\fldrslt \cf2 \ul \ulc2 InnoDB}} storage engine.\
+If you need more storage space, you can expand your instance like this:\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-modify-db-instance mydb \'96apply-immediately -s 50\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 If you don\'92t use the \'96apply-immediately parameter, the expansion will be performed during your DB Instance\'92s maintenance window. The maintenance window opens once per week for four hours. During that time we will apply the latest MySQL patches (if necessary) and take care of any pending scaling operations. Your DB Instance will be unavailable only for the minimum amount of time required to make system changes on your behalf. You should set the maintenance window to a time that will result in the least possible inconvenience and down time for your users.\
+You can set up a two hour backup window and a retention period for automated backups, and you can also create a database snapshot at any time:\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 <dev>:
+\b0  rds-create-db-snapshot mydb -s jeffbarr-backup-2009-10-15\
+\pard\pardeftab720\sa240\ql\qnatural
+\cf0 You can create new Amazon RDS DB Instances from either type of backup.With the automated backup feature, you can restore to any point in time within your backup retention period, up to the last five minutes.\
+Each DB Instance exports a number of metrics to {\field{\*\fldinst{HYPERLINK "http://aws.amazon.com/cloudwatch/"}}{\fldrslt \cf2 \ul \ulc2 CloudWatch}} including CPU Utilization (percent), Free Storage Space (bytes), and Database Connections (count).\
+We have a number of enhancements planned for the future. Here are some of the features planned for the coming months:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls4\ilvl0\cf0 {\listtext	\'95	}Reserved DB Instances so that you can pay a low one-time fee and then receive a substantial discount on your hourly usage charges.\
+{\listtext	\'95	}A High Availability offering so that you can easily and cost-effectively provision synchronously replicated RDS instances in two different availability zones.\
+\pard\tx560\pardeftab720\ql\qnatural
+\cf0 \
+}

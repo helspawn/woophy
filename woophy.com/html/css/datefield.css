@@ -1,0 +1,79 @@
+.DS_calendar{
+	cursor:default;
+	position:absolute;
+	padding:1px;
+	border:1px solid #003900;
+	background-color:#FFFFFF;
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+.DS_calendar table{
+	border-collapse:collapse;
+}
+.DS_calendar table td{
+	padding:1px;
+	width:20px;
+	height:18px;
+	text-align:center;
+	vertical-align:middle;
+}
+.DS_calendar table thead td{
+	height:22px;
+}
+.DS_month {
+	float:left;
+	width:124px;
+	text-align: center;
+}
+.DS_year {
+	/*border: 1px solid #CCCCCC;*/
+	height:20px;
+}
+.DS_year, .DS_year option{
+	color:#003900;
+}
+.DS_calendar .MonthHeader{
+	height:24px;
+	line-height:24px;
+	/*text-align: center;*/
+}
+.DS_paging{
+	width:15px;
+	height:15px;
+	float:left;
+	margin-top:3px;
+}
+.DS_pageforward{
+	cursor:pointer;
+	background-position:-176px -437px;
+	float:right;
+}
+.DS_pagebackward{
+	cursor:pointer;
+	background-position:-150px -437px;
+}
+.DS_pageforward_disabled{background-position:-176px -450px;}
+.DS_pagebackward_disabled{background-position:-150px -450px;}
+
+.DS_calendar .Label{
+	width:144px;
+	text-align:center;
+	display:block;
+	float:left;
+}
+
+.DS_weekday{
+	font-weight:bold;
+	color:#003900;
+}
+.DS_date_disabled{
+	color:#CCCCCC;
+}
+.DS_today{
+	background-color:#B8D994;
+}
+.DS_date_selected, .DS_date:hover, .DS_today:hover{
+	color:#FFFFFF;
+	background-color:#37822F;
+}

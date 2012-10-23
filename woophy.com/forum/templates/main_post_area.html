@@ -1,0 +1,26 @@
+<form action="{$main_url}/{$indexphp}" method="post" class="formStyle" id="postMsg">
+
+<table class="forums">
+
+{$mainPostForm}
+
+<tr>
+<td class="caption5">
+<script type="text/javascript">
+<!--
+document.write('<input type="button" name="subbut" value="{$l_sub_post_msg}" class="inputButton" tabindex="5" onClick="submitForm();" />');
+//-->
+</script>
+
+<noscript><input type="submit" value="{$l_sub_post_msg}" class="inputButton" tabindex="5" /></noscript>
+{$msg_logged_in}
+<input type="hidden" name="action" value="pthread" />
+<input type="hidden" name="forum" value="{$forum}" />
+<input type="hidden" name="topic" value="{$topic}" />
+<input type="hidden" name="anchor" value="{$anchor}" />
+
+</td>
+</tr>
+</table>
+
+</form>

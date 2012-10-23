@@ -1,0 +1,52 @@
+<!--<tr><td>&nbsp;</td></tr>-->
+<tr><td class="caption2"><a id="newreply">{$l_messageABC}</a></td></tr>
+<tr>
+<td class="caption5" id="editorControls" style="vertical-align:middle;">
+<table><tr><td>
+<a href="JavaScript:paste_strinL(selektion,3,'[b]','[/b]','')" onmouseover="window.status='{$l_bb_bold}'; return true" onmouseout="window.status=''; return true" onmousemove="pasteSel()"><img src="{$img_url}/forum_buttons/button_bold.gif" alt="{$l_bb_bold}" /></a>
+</td><td>
+<a href="JavaScript:paste_strinL(selektion,3,'[i]','[/i]','')" onmouseover="window.status='{$l_bb_italic}'; return true" onmouseout="window.status=''; return true" onmousemove="pasteSel()"><img src="{$img_url}/forum_buttons/button_italic.gif" alt="{$l_bb_italic}" /></a>
+</td><td>
+<a href="JavaScript:paste_strinL(selektion,3,'[u]','[/u]','')" onmouseover="window.status='{$l_bb_underlined}'; return true" onmouseout="window.status=''; return true" onmousemove="pasteSel()"><img src="{$img_url}/forum_buttons/button_underlined.gif" alt="{$l_bb_underlined}" /></a>
+</td><td>
+<a href="JavaScript:paste_strinL(selektion, 4, '[url='+prompt('URL:','http://www.your-url-here.com')+']', '[/url]', '')" onmouseover="window.status='{$l_bb_url}'; return true" onmouseout="window.status=''; return true" onmousemove="pasteSel()"><img src="{$img_url}/forum_buttons/button_url.gif" alt="{$l_bb_url}" /></a>
+</td><td>
+<input type="button" onmouseover="window.status='{$l_bb_image}'; return true" onmouseout="window.status=''; return true" value="Insert image" class="inputButton" onclick="showInsertImage()" />
+</td><td>
+<input type="button" value="Preview" class="inputButton" onclick="previewMessage();" />
+</td><td width="520" style="padding-left:10px;">
+<!-- BEGIN SMILIES -->
+<script type="text/javascript">
+<!--
+var helpWin;
+function PopUp(aaa,zz,xx,scrb){
+var wsss = eval (screen.width/2 - zz/2);
+var hsss = eval(screen.height/2 - xx/2);
+helpWin = window.open(aaa,"imageWin","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars="+scrb+",resizable=0,width="+ zz +",height="+ xx +",left="+ wsss +",top="+ hsss +"");
+if(helpWin.focus)helpWin.focus();
+}
+//-->
+</script> 
+
+<a href="JavaScript:paste_strinL(':)',3,'','','')"><img src="{$img_url}/smilies/smile.png" alt=":)" /></a>
+<a href="JavaScript:paste_strinL(';)',3,'','','')"><img src="{$img_url}/smilies/wink.png" alt=";)" /></a>
+<a href="JavaScript:paste_strinL(':(',3,'','','')"><img src="{$img_url}/smilies/sad.png" alt=":(" /></a>
+<a href="JavaScript:paste_strinL(':D',3,'','','')"><img src="{$img_url}/smilies/laugh.png" alt=":D" /></a>
+
+<a href="javascript:PopUp('{$main_url}/{$indexphp}action=displaysmilies',150,200,1)"><b>...</b></a>&nbsp;<input type="checkbox" name="dissmilies" id="dissmilies" value="on" />&nbsp;<label for="dissmilies">{$l_disableSmilies}</label>
+
+<!-- END SMILIES -->
+</td>
+</tr></table>
+</td>
+</tr>
+<tr id="insert_image" style="display:none"><td class="caption5"><table width="100%;"><tr><td><input class="inputButton" type="button" id="cancel_insert" onclick="showInsertImage();" name="cancel_insert" value="Cancel" /></td><td><select onchange="onSelectImgInsert(this)" id="option_insert" name="option_insert"><option value="0" selected="true">Woophy Photo #</option><option value="1">Image url</option></select></td><td><input type="text" id="img_insert" size="36" name="img_insert" value="" /></td><td width="200"><input class="inputButton" type="button" onclick="doInsertImage()" name="do_img_insert" value="Add" /></td></tr></table>
+</td></tr>
+<tr>
+<td class="caption5"><textarea name="postText" id="postText" cols="78" rows="15" class="textForm" tabindex="2" style="width:550px;">{$postText}</textarea>
+<input type="hidden" name="prevForm" value="0" />
+<br />
+{$emailCheckBox}
+</td>
+</tr>
+<tr><td class="tbTransparent" style="text-align:left;padding-left:5px;"><br/>{$loginLogout}</td></tr>

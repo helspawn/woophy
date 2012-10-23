@@ -1,0 +1,24 @@
+SUBJECT>>{$sitename}: New post<<
+Hello,
+
+You're receiving this letter, because you are subscribed
+to the topic "{$topicTitle}" in our forum "{$forum_title}",
+and {$user_usr} has posted it or replied in it.
+
+Message begins:
+--
+
+{$postTextSmall}
+
+--
+
+Click the link below, or copy/paste it as your browser's URL address,
+to read the whole topic and/or replies:
+
+{$main_url}/{$indexphp}action=vthread&forum={$forum}&topic={$topic}&goPost={$topic_last_post_id}&user=[USER_ID]
+
+The Woophy Team
+
+If you don't want to receive more notifications about this topic,
+click on the link provided above, go to the bottom of the page
+and click on the "Unsubscribe" link.

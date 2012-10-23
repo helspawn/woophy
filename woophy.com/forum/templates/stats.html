@@ -1,0 +1,51 @@
+<table class="tbTransparent blocktitle">
+<tr>
+<td class="tbTransparent" style="padding:1px 0"><img src="{$img_url}/!pix.gif" alt="" width="1" height="30"/></td>
+<td style="vertical-align:bottom"><h1>{$l_stats} <span class="txtNr">{$statsTop}</span></h1></td>
+</tr>
+</table>
+
+<form action="{$main_url}/{$indexphp}" method="post" class="formStyle">
+
+<table class="forumsmb">
+<tr>
+<td class="caption2">{$l_stats_numUsers}: {$numUsers}</td>
+<td class="caption2">{$l_stats_numTopics}: {$numTopics}</td>
+<td class="caption2">{$l_stats_numPosts}: {$numPosts}</td>
+</tr>
+<!--
+<tr>
+<td class="caption2" colspan="3">
+{$l_stats_admin} <a href="{$main_url}/{$indexphp}action=userinfo&amp;user=1"{$nof}>{$adminInf}</a>
+</td>
+</tr>
+
+<tr>
+<td class="caption2" colspan="3">
+{$l_stats_lastReg} <a href="{$main_url}/{$indexphp}action=userinfo&amp;user={$lastRegUsr[0]}"{$nof}>{$lastRegUsr[1]}</a>
+</td>
+</tr>
+-->
+<tr>
+<td class="caption5" colspan="3">
+<input type="hidden" name="action" value="stats" />
+<input type="hidden" name="top" value="{$top}" />
+<input type="hidden" name="lst" value="{$lst}" />
+<br />
+<b>*</b> {$l_days_within} <input type="text" size="4" maxlength="4" name="days" value="{$days}" class="textForm" /> {$l_days} 
+<input type="submit" value="{$l_search[3]}" class="inputButton" />
+<br />
+* {$l_stats_days_c}
+<br /><br />
+</td>
+</tr>
+<!--/13-->
+
+<tr>
+<td class="caption1" colspan="3">{$statsOpt}</td>
+</tr>
+<tr>
+<td class="caption5" colspan="3" style="text-align:center"><br />{$list_stats_popular}{$list_stats_aUsers}{$list_stats_viewed}<br /></td>
+</tr>
+</table>
+</form>

@@ -1,0 +1,33 @@
+.selectlist{
+	cursor:default;
+	padding:1px;
+	border:1px solid #003900;
+	background-color:#FFFFFF;
+}
+.selectlist table{
+	/*table-layout:fixed;*/
+	width:250px;
+}
+.selectlist table.citylist{
+	width:415px;
+}
+.selectlist table tr.active{
+	background-color:#003900;
+	color:#FFFFFF
+}
+.selectlist table tr.inactive{
+	background-color:#FFFFFF;
+	color:#053904;
+}
+.selectlist table td{
+	padding:0;
+	height:18px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	font-size:9pt;
+}
+.selectlist td.info{
+	width:87px;
+	text-align:right;
+}

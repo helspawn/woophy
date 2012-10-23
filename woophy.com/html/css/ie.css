@@ -1,0 +1,13 @@
+.transparent{-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);}
+.opacity-70{-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);}
+.GreenButton{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D630E', endColorstr='#063b04',GradientType=0 ); /* IE6-9 */}
+.GreenButton:hover{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#227A11', endColorstr='#0A3F06',GradientType=0 ); /* IE6-9 */}
+.OrangeButton{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6a06', endColorstr='#d65906',GradientType=0 ); /* IE6-9 */}
+.OrangeButton:hover{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9600', endColorstr='#CD5406',GradientType=0 ); /* IE6-9 */}
+.DropdownContainer{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b3d3aa',GradientType=0 ); /* IE6-9 */	}
+#HeaderContainer{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58a129', endColorstr='#305c14',GradientType=1 ); /* IE6-8 */}
+#HeaderTop #TopLinks #lightswitch a{-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#222222')";filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#222222');}
+#MainColumn #MapContainer #ExpandBar{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */}
+#MainColumn #SearchContainer #SearchSimple, #MainColumn #SearchContainer #SearchAdvanced{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78c742', endColorstr='#5fb728',GradientType=0 ); /* IE6-8 */}
+#RightColumn #Slides .UserInfoBottom{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7e0b6', endColorstr='#d1ecbf',GradientType=0 ); /* IE6-9 */}
+input[disabled],input.DisabledText,input[disabled]:hover,input.DisabledText:hover{filter: none;}

@@ -1,0 +1,19 @@
+<tr valign="top" class="{$bg}">
+<td class="caption1">
+<div class="post_author">
+<a class="sprite ImageContainer Avatar" href="{$posterUrl}"><img onerror="jQuery(this).css('visibility','hidden').parent().removeClass('ImageContainer');" src="{$posterAvatar}" width="80"/></a>
+<a name="msg{$cols[6]}" href="JavaScript:paste_strinL('{$posterNameJs}',2)">
+<span class="username">{$posterName}</span>
+</a>
+<span class="txtSm">{$viewReg}</span>{$userInfo_user_custom1[$poster_id]}
+</div>
+</td>
+<td class="caption1">
+<span class="txtSm">
+<a href="#msg{$cols[6]}">#</a> {$l_posted}: {$postDate}{$editedBy}{$viewIP}
+<br />
+{$eachReply}<script type="text/javascript">getQuotation();</script>{$allowed}{$moveLink}
+</span>
+<br /><br />{$posterText}{$deleteBox}<br /><br />
+</td>
+</tr>

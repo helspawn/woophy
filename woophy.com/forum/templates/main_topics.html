@@ -1,0 +1,86 @@
+<script type="text/javascript">
+<!--
+var l_accessDenied="{$l_forbidden}";
+var l_quoteMsgAlert="{$l_quoteMsgAlert}";
+var tlength={$post_text_minlength};
+var anonPost={$anonPost};
+{$authorizePopUp}
+//-->
+</script>
+
+<!--MAINTOPICSPAGE-->
+<table class="tbTransparent blocktitle">
+<tr>
+<td class="tbTransparent" style="width:35px;text-align:left"><img src="{$img_url}/forum_icons/{$forumIcon}" alt="{$sitename}" /></td>
+<td class="tbTransparent" style="text-align:left;padding-top:9px;padding-left:10px;"><b><a href="{$main_url}/{$startIndex}" title="{$sitename}">{$sitename}</a></b> &lt; <b>{$forumName}</b></td>
+<td class="tbTransparent" style="width:40%;text-align:right;padding-top:9px;"><div class="sort" style="white-space:nowrap;">{$l_sortedBy}&nbsp;<span class="txtCm">{$sortedByT}</span>&nbsp;&nbsp;{$l_sortBy}&nbsp;<a href="{$main_url}/{$indexphp}action=vtopic&amp;forum={$forum}&amp;sortBy={$sortByNew}">{$sortByT}</a></div></td>
+</tr>
+</table>
+
+{$pageNav}
+
+<table class="forums list">
+<tr>
+<td class="caption4" style="width:25px;text-align:center"><img src="{$img_url}/!pix.gif" style="width:25px;height:1px" alt="" /></td>
+<td class="caption4" style="width:300px">{$l_topic}</td>
+<td class="caption4" style="text-align:center">{$l_replies}</td>
+<td class="caption4" style="text-align:center">{$l_views}</td>
+<td class="caption4" style="text-align:center">{$l_author}</td>
+<td class="caption4" style="text-align:center">{$l_lastAuthor}</td>
+</tr>
+
+{$list_topics}
+
+</table>
+
+{$pageNav}
+<!--/MAINTOPICSPAGE-->
+
+<!--MAINTOPICFORM-->
+<form action="{$main_url}/{$indexphp}" id="postMsg" method="post" class="formStyle">
+
+<table class="forumsmb">
+<tr>
+<td class="caption2"><a id="newtopic">{$l_new_topic}</a></td>
+</tr>
+<!--/MAINTOPICFORM-->
+{$newTopicForm}
+<!--MAINTOPICFORM-->
+<tr>
+<td class="caption5">
+<input type="text" name="topicTitle" size="38" maxlength="{$topic_max_length}" class="textForm" tabindex="1" style="width:550px;" />
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+{$mainPostForm}
+
+<tr>
+<td class="caption5">
+<script type="text/javascript">
+<!--
+document.write('<input type="button" {$str_disabled}name="subbut" value="{$l_sub_post_tpc}" class="inputButton" tabindex="5" onClick="submitForm();" />');
+//-->
+</script>
+
+<noscript><input type="submit" value="{$l_sub_post_tpc}" class="inputButton" tabindex="5" /></noscript>
+{$msg_logged_in}
+<!--MAINTOPICFORUMINPUT-->
+<input type="hidden" name="forum" value="{$forum}" />
+<!--/MAINTOPICFORUMINPUT-->
+<input type="hidden" name="action" value="ptopic" />
+</td>
+</tr>
+</table>
+
+</form>
+<!--/MAINTOPICFORM-->
+
+<!--MAINTOPICSPAGE-->
+
+<script type="text/javascript">
+<!--
+if(document.forms['postMsg']) document.forms['postMsg'].elements['subbut'].disabled=false;
+//-->
+</script>
+
+<!--/MAINTOPICSPAGE-->

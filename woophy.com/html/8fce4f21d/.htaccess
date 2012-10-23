@@ -1,0 +1,11 @@
+#AuthGroupFile /dev/null
+#AuthName "Woophy Admin"
+#AuthType Basic
+#AuthUserFile /var/www/.passwd
+#require valid-user
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.+) - [PT,L]
+RewriteRule ^(.*)$ index.php [L,QSA]

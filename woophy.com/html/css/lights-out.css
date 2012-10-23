@@ -1,0 +1,35 @@
+body.lightsout{
+	background-color:#222222;
+}
+
+body.lightsout,
+body.lightsout h1,
+body.lightsout h2,
+body.lightsout h3,
+body.lightsout #MainColumn #TitleBar #MapStats span{
+	color:#eeeeee ! important;
+}
+
+body.lightsout #HeaderBottom #MainNav ul li a.active{
+	color:#eeeeee;
+	background-color:#222222;	
+}
+
+body.lightsout #MainColumn #MapContainer{
+	background:none;
+}
+
+body.lightsout #MainColumn #MapContainer,
+body.lightsout #MainColumn #Gallery,
+body.lightsout #RightColumn #Slides .SlideContentContainer,
+body.lightsout #RightColumn #Feeds .FeedContent,
+body.lightsout #RightColumn a.AdvertiseNow{
+	border-color:#555555;
+}
+
+body.lightsout a.AdvertiseNow{color:#FE9900 ! important;}
+
+body.lightsout #RightColumn #Slides .SlideInfoContainer{background:#444444 ! important;}
+body.lightsout #RightColumn #Slides .UserInfoBottom{background:#666666 ! important;}
+	
+body.lightsout #RightColumn #Feeds .Feed .alt a{background-color:#444444;}

@@ -1,0 +1,78 @@
+<table class="tbTransparent blocktitle">
+<tr>
+<td class="tbTransparent" style="padding:1px 0"><img src="{$img_url}/!pix.gif" alt="" width="1" height="30"/></td>
+<td class="tbTransparent" style="vertical-align:bottom"><h1>{$l_searchSite}</h1></td>
+</tr>
+</table>
+
+<form action="{$main_url}/{$indexphp}" method="get" class="formStyle">
+
+<table class="forums">
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_search[0]}</td>
+<td class="caption5"><input name="phrase" type="text" size="50" maxlength="50" class="textForm" value="{$phrase}" /></td>
+</tr>
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_search[2]}</td>
+<td class="caption5">{$searchTypeDroDown}
+</td>
+</tr>
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_search[1]}</td>
+<td class="caption5">{$whereDropDown}</td>
+</tr>
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_forum}</td>
+<td class="caption5"><select class="textForm" name="forum"><option value="">&mdash;</option>{$listForums}</select>
+</td>
+</tr>
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_search[8]}</td><td class="caption5">
+{$l_from} {$sDayDropDown} {$sMonthDropDown} {$sYearDropDown} {$l_to} {$eDayDropDown} {$eMonthDropDown} {$eYearDropDown}
+</td>
+</tr>
+
+<tr>
+<td class="caption4" style="text-align:right">{$l_search[6]}</td>
+<td class="caption5"><input type="text" name="posterName" class="textForm" value="{$posterName}" /></td>
+</tr>
+
+<tr>
+<td class="caption4"><img src="{$img_url}/!pix.gif" style="width:120px;height:1px" alt="" /></td> 
+<td class="caption5" style="width:100%"><input type="submit" value="{$l_search[3]}" class="inputButton" /></td> 
+</tr>
+
+</table>
+
+<input type="hidden" name="action" value="search" />
+<input type="hidden" name="searchGo" value="1" />
+</form>
+
+<br />
+<br />
+<table class="tbTransparent blocktitle"><tr><td class="tbTransparent"><h2>Search Results</h2></td><td class="tbTransparent" style="text-align:right">{$warning}</td></tr></table>
+
+{$pageNav}
+<br/>
+<table class="tbTransparent">
+<tr>
+<td>
+
+<div>
+
+{$searchResults}
+
+</div>
+
+</td>
+</tr>
+</table>
+{$pageNav}
+
+<br><br>
+

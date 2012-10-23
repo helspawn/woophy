@@ -1,0 +1,33 @@
+/* DROPDOWN LISTS */
+.DropdownContainer{background:none ! important; border:none ! important; filter: none ! important;width:auto !important}
+.DropdownContainer select{background:none ! important;width:auto !important;}
+
+#MainColumn .CommentPost textarea{width:636px};
+#PhotoPopup .CommentPost textarea{width:244px;height:49px;};
+#BlogForm textarea{width:614px;}
+
+
+.flag {line-height: 2px;}
+
+#Image a{z-index:1;}
+#Image img{position:relative;z-index:2;}
+
+.DS_calendar{
+	width:156px;
+}
+
+#MainColumn .Gallery .GalleryPhoto{
+	margin:0;
+	border-bottom:1px solid white;
+	border-right:1px solid white;
+}
+
+/*inline-block fix*/
+.Paging li, .award, .ActionButton, .SocialButtons,.PrevNext, #MainColumn .Awards,#RightColumn #Slides .AwardIcons, 
+#RightColumn #Slides .SlideNav .pagination, #RightColumn .FeedWidget .FeedNav .pagination,
+.pagination li,
+#RightColumn .FeedWidget .Feed .Post .PostText p,
+#Footer #FooterText li{
+	zoom:1;
+	display:inline !imporant;
+}

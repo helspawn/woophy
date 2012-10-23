@@ -1,0 +1,27 @@
+.js_nodisplay{
+	display:none ! important;
+}
+
+.js_hidden{
+	visibility:hidden ! important;
+}
+
+.js_transparent{
+	width:100%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.js_positionstatic{position:static ! important;}
+.js_positionrelative{position:relative ! important;}
+.js_positionfixed{position:fixed ! important;}
+.js_positionabsolute{position:absolute ! important;}
+
+.js_floatleft{float:left ! important;}
+
+.js_top-0{top:0 ! important;}
+.js_margintop-5{margin-top:5px ! important;}
+.js_paddingtop-50{padding-top:50px ! important;}
+.js_overflowhidden{overflow:hidden ! important;}
+
+.js_heightauto{height:auto ! important;}
